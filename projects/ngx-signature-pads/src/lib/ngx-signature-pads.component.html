@@ -1,0 +1,16 @@
+<canvas
+  class="canvas-canvas"
+  #signCanvas
+  [width]="width"
+  [height]="height"
+  (mousedown)="onStart($event)"
+  (touchstart)="onStart($event)"
+  (mousemove)="onMove($event)"
+  (touchmove)="onMove($event)"
+  (touchend)="onStop($event)"
+  (mouseup)="onStop($event)"
+></canvas>
+<div class="row">
+    <button *ngIf="!hideSave" (click)="reset()">clear</button>
+    <button *ngIf="!hideReset" (click)="canvasToImage()">save</button>
+</div>
