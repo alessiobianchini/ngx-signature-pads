@@ -1,24 +1,55 @@
-# NgxSignaturePads
+<h3 align="center">
+ngx-signature-pads
+</h3>
+<h5 align="center">
+ <a href="https://github.com/sponsors/alessiobianchini" target="_blank">
+  Support my open-source code as a sponsor
+ </a>
+</h5>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+This module provides Angular developers with a signature pad component.
 
-## Code scaffolding
+---
+### Demo screenshot
+![image](https://github.com/alessiobianchini/ngx-signature-pads/assets/33493281/7640c226-95b2-4cc6-8d94-e4aebcfe091e)
 
-Run `ng generate component component-name --project ngx-signature-pads` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-signature-pads`.
-> Note: Don't forget to add `--project ngx-signature-pads` or else it will be added to the default project in your `angular.json` file. 
+---
+### Getting Started
 
-## Build
+Start by installing the Angular Layout library from `npm`
 
-Run `ng build ngx-signature-pads` to build the project. The build artifacts will be stored in the `dist/` directory.
+`npm i -s ngx-signature-pads`
 
-## Publishing
+Next, you'll need to import the Layout module in your app's module.
 
-After building your library with `ng build ngx-signature-pads`, go to the dist folder `cd dist/ngx-signature-pads` and run `npm publish`.
+**app.module.ts**
 
-## Running unit tests
+```ts
 
-Run `ng test ngx-signature-pads` to execute the unit tests via [Karma](https://karma-runner.github.io).
+import { NgxSignaturePadsModule } from 'ngx-signature-pads';
+...
 
-## Further help
+@NgModule({
+    ...
+    imports: [ NgxSignaturePadsModule ],
+    ...
+});
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+After that is configured, you can use the Angular Layout attributes in your HTML tags for flex layout:
+```html
+<ngx-signature-pads (saveEvent)="save($event)"></ngx-signature-pads>
+```
+
+Input options:
+- width: number (default 500px)
+- height: number (default 300px)
+- lineWidth: number (default 2px)
+- hideSave: boolean (default false)
+- hideReset: boolean (default false)
+
+Output:
+- saveEvent: EventEmitter<string> (base64 image)
+---
+
+License: MIT
