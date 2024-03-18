@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-lib": "ng build ngx-signature-pads"
+    "build-lib": "ng build ngx-signature-pads",
+    "publish-lib": "cd dist/ngx-signature-pads && npm publish --access public --no-git-checks"
   },
   "private": true,
   "dependencies": {
