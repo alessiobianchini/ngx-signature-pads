@@ -25,6 +25,8 @@ jobs:
         run: npm run build-lib
       - name: Configure npm registry for GitHub Packages
         run: npm config set registry https://npm.pkg.github.com/
+      - name: Registry login
+        run: npm login
       - name: Publish To Github
         run: |
           cd dist/ngx-signature-pads
