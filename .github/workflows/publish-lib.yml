@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: npm i
       - name: Build
@@ -27,10 +26,10 @@ jobs:
       - name: Pack
         working-directory: ./dist/ngx-signature-pads
         run: npm pack
-      - name: Publish
-        working-directory: ./dist/ngx-signature-pads
-        run: npm publish
+      - name: Publish To Github
+        run: |
+          cd dist/${{ github.event.inputs.project_name }}
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+          npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          token: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
