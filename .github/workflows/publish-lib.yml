@@ -21,13 +21,10 @@ jobs:
           node-version: '18.x'
       - name: Install dependencies
         run: npm i
-      - name: Build
+      - name: Build lib
         run: npm run build-lib
-      - name: Pack
-        working-directory: ./dist/ngx-signature-pads
-        run: npm pack
       - name: Publish To Github
-        working-directory: ./dist/ngx-signature-pads
+        working-directory: ./ngx-signature-pads
         run: |
           cd dist/${{ github.event.inputs.project_name }}
           npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
