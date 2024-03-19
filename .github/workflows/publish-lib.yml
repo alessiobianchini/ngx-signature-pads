@@ -24,9 +24,8 @@ jobs:
       - name: Build lib
         run: npm run build-lib
       - name: Publish To Github
-        working-directory: ./ngx-signature-pads
         run: |
-          cd dist/${{ github.event.inputs.project_name }}
+          cd dist/ngx-signature-pads
           npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
           npm publish --access public
         env:
