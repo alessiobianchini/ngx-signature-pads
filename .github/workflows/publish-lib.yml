@@ -1,4 +1,4 @@
-name: Build and publish library to GitHub registry
+name: Build and publish library to NPM registry
 
 on:
   release:
@@ -18,19 +18,17 @@ jobs:
       - name: Setup NPM
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: 18
       - name: Install dependencies
         run: npm i
       - name: Build lib
         run: npm run build-lib
-      - name: Configure npm registry for GitHub Packages
-        run: npm config set registry https://npm.pkg.github.com/
-      - name: Registry login
-        run: npm login
+      - name: Configure npm registry for NPM js Packages
+        run: npm config set registry https://registry.npmjs.org/
       - name: Publish To Github
         run: |
           cd dist/ngx-signature-pads
-          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
