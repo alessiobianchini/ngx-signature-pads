@@ -1,4 +1,4 @@
-name: Build and publish library to npm.js registry
+name: Build and publish library to GitHub registry
 
 on:
   release:
@@ -27,6 +27,7 @@ jobs:
         working-directory: ./dist/ngx-signature-pads
         run: npm pack
       - name: Publish To Github
+        working-directory: ./dist/ngx-signature-pads
         run: |
           cd dist/${{ github.event.inputs.project_name }}
           npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
