@@ -31,11 +31,11 @@ export class NgxSignaturePadsComponent implements AfterViewInit {
 
   getPosition(evt: any) {
     var rect = this.sigPadElement.getBoundingClientRect();
-    const x = evt.clientX - rect.left;
-    const y = evt.clientY - rect.top;
+    const x = (evt.clientX || evt.touches[0]?.clientX) - rect.left;
+    const y = (evt.clientY || evt.touches[0]?.clientY) - rect.top;
     return {
-      x: x,
-      y: y,
+        x: x,
+        y: y,
     };
   }
 
