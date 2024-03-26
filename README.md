@@ -7,7 +7,7 @@ ngx-signature-pads
  </a>
 </h5>
 
-[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&ts=1683906897&type=6e&v=1.0.5&x2=0)](https://www.npmjs.com/package/ng-flex-layout) 
+[![npm version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&r=r&ts=1683906897&type=6e&v=1.0.5&x2=0)](https://www.npmjs.com/package/ngx-signature-pads) 
 
 This module provides Angular developers with a signature pad component.
 
