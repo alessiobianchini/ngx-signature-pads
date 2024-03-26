@@ -1,6 +1,12 @@
 {
   "name": "ngx-signature-pads",
   "version": "0.0.0",
+  "homepage": "https://github.com/alessiobianchini/ngx-signature-pads",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alessiobianchini/ngx-signature-pads.git"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

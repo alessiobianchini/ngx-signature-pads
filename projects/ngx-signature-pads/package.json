@@ -1,6 +1,16 @@
 {
   "name": "ngx-signature-pads",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alessiobianchini/ngx-signature-pads.git"
+  },
+  "keywords": [
+    "angular",
+    "signature pad",
+    "canvas"
+  ],
+  "homepage": "https://github.com/alessiobianchini/ngx-signature-pads#readme",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0"
